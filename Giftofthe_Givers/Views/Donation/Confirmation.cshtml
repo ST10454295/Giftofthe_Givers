@@ -1,0 +1,34 @@
+@{
+    ViewData["Title"] = "Donation Complete";
+    var certificateNumber = TempData["CertificateNumber"] as string;
+    var donationAmount = TempData["DonationAmount"] as string;
+    var certificatePending = TempData["CertificatePending"] is true;
+}
+<div class="container py-5">
+    <div class="success-card">
+        <div class="success-icon">✓</div>
+        <h1>Thank You!</h1>
+        <p class="lead">Your donation has been successfully recorded.</p>
+        @if (!string.IsNullOrWhiteSpace(certificateNumber))
+        {
+            <p>Your tax certificate was generated.</p>
+            <dl class="row justify-content-center">
+                <dt class="col-auto">Certificate number</dt>
+                <dd class="col-auto">@certificateNumber</dd>
+                <dt class="col-auto">Donation amount</dt>
+                <dd class="col-auto">@donationAmount</dd>
+            </dl>
+        }
+        else if (certificatePending)
+        {
+            <p>Your donation was saved. The tax certificate service is temporarily unavailable or has not been configured yet.</p>
+        }
+        else
+        {
+            <p>Thank you for supporting communities in need.</p>
+        }
+        <div class="mt-4">
+            <a asp-controller="Home" asp-action="Index" class="btn btn-success">Back to Home</a>
+        </div>
+    </div>
+</div>

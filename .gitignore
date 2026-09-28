@@ -1,0 +1,11 @@
+.vs/
+**/bin/
+**/obj/
+**/TestResults/
+*.user
+*.suo
+*.nupkg
+*.snupkg
+local.settings.json
+*.publishsettings
+*.pubxml.user

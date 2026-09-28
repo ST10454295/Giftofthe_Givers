@@ -1,0 +1,202 @@
+﻿@model IEnumerable<GiftOfTheGivers.Models.ProjectUpdate>
+
+@{
+    ViewData["Title"] = "Employee Dashboard";
+}
+
+<div class="container py-5">
+
+
+    <div class="d-flex justify-content-between
+                align-items-center mb-4">
+
+        <div>
+
+            <span class="eyebrow">
+                EMPLOYEE PORTAL
+            </span>
+
+            <h1>
+                Dashboard
+            </h1>
+
+        </div>
+
+    </div>
+
+
+    <!-- STATISTICS -->
+
+    <div class="row g-4 mb-5">
+
+
+        <div class="col-md-4">
+
+            <div class="dashboard-stat">
+
+                <span>
+                    Ongoing Projects
+                </span>
+
+                <strong>
+                    5
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="dashboard-stat">
+
+                <span>
+                    Volunteer Sign-ups
+                </span>
+
+                <strong>
+                    @ViewBag.VolunteerCount
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="dashboard-stat">
+
+                <span>
+                    Total Donations
+                </span>
+
+                <strong>
+                    R @ViewBag.TotalDonations
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="row g-4">
+
+
+        <!-- POST UPDATE -->
+
+        <div class="col-lg-5">
+
+            <div class="form-card">
+
+                <h2>
+                    Post Project Update
+                </h2>
+
+                <p>
+                    Share an update about an ongoing
+                    relief project.
+                </p>
+
+
+                <form asp-action="PostUpdate"
+                      method="post">
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Project Title
+                        </label>
+
+                        <input name="Title"
+                               class="form-control"
+                               required />
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Update
+                        </label>
+
+                        <textarea name="Description"
+                                  class="form-control"
+                                  rows="6"
+                                  required></textarea>
+
+                    </div>
+
+
+                    <button class="btn btn-success">
+
+                        Post Update
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECENT UPDATES -->
+
+        <div class="col-lg-7">
+
+            <h2>
+                Recent Project Updates
+            </h2>
+
+
+            @if (!Model.Any())
+            {
+
+                <div class="alert alert-light">
+
+                    No project updates have been posted yet.
+
+                </div>
+
+            }
+            else
+            {
+
+                foreach (var project in Model)
+                {
+
+                    <div class="project-card">
+
+                        <h4>
+                            @project.Title
+                        </h4>
+
+                        <p>
+                            @project.UpdateDescription
+                        </p>
+
+                        <small>
+
+                            Posted:
+                            @project.PostedDate.ToString("dd MMM yyyy")
+
+                        </small>
+
+                    </div>
+
+                }
+
+            }
+
+        </div>
+
+    </div>
+
+</div>

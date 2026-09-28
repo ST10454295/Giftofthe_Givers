@@ -1,0 +1,15 @@
+﻿@if (TempData["CertificateNumber"] != null)
+{
+    <p>
+        Certificate Number:
+        @TempData["CertificateNumber"]
+    </p>
+}
+
+@if (TempData["DonationAmount"] != null)
+{
+    <p>
+        Donation Amount:
+        @TempData["DonationAmount"]
+    </p>
+}

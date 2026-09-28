@@ -1,0 +1,183 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center min-vh-75">
+
+            <div class="col-lg-6">
+
+                <span class="eyebrow">
+                    HUMANITARIAN RELIEF
+                </span>
+
+                <h1 class="display-3 fw-bold mt-3">
+                    Together, We Can Make a Difference.
+                </h1>
+
+                <p class="lead mt-3">
+
+                    Supporting communities in need through
+                    relief, compassion and practical action.
+
+                </p>
+
+
+                <div class="mt-4">
+
+                    <a asp-controller="Donation"
+                       asp-action="Index"
+                       class="btn btn-gold btn-lg me-2">
+
+                        Donate Now
+
+                    </a>
+
+
+                    <a asp-controller="Volunteer"
+                       asp-action="Index"
+                       class="btn btn-outline-success btn-lg">
+
+                        Volunteer
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6 text-center">
+
+                <div class="hero-logo">
+
+                    <div class="gold-heart">
+                        ♥
+                    </div>
+
+                    <div class="gift-icon">
+                        🎁
+                    </div>
+
+                    <p>
+                        Every act of giving creates hope.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="container py-5">
+
+    <div class="row g-4">
+
+
+        <div class="col-md-4">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ♥
+                </div>
+
+                <h3>
+                    Make a Donation
+                </h3>
+
+                <p>
+
+                    Your support helps provide relief
+                    where it is needed most.
+
+                </p>
+
+                <a asp-controller="Donation"
+                   asp-action="Index"
+                   class="btn btn-success">
+
+                    Donate
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ♡
+                </div>
+
+                <h3>
+                    Become a Volunteer
+                </h3>
+
+                <p>
+
+                    Join our team and contribute
+                    your skills and time.
+
+                </p>
+
+                <a asp-controller="Volunteer"
+                   asp-action="Index"
+                   class="btn btn-success">
+
+                    Volunteer
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ◉
+                </div>
+
+                <h3>
+                    Relief Projects
+                </h3>
+
+                <p>
+
+                    Follow ongoing humanitarian
+                    relief initiatives.
+
+                </p>
+
+                <a asp-controller="Home"
+                   asp-action="About"
+                   class="btn btn-success">
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>

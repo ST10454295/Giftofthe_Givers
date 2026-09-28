@@ -1,0 +1,153 @@
+﻿@model GiftOfTheGivers.Models.Volunteer
+
+@{
+    ViewData["Title"] = "Volunteer";
+}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center g-5">
+
+
+        <div class="col-lg-7">
+
+            <div class="form-card">
+
+                <span class="eyebrow">
+                    VOLUNTEER WITH US
+                </span>
+
+                <h1>
+                    Share Your Time and Skills
+                </h1>
+
+                <p>
+                    Register your interest in volunteering
+                    with our humanitarian projects.
+                </p>
+
+
+                <form asp-action="Index"
+                      method="post">
+
+
+                    <div asp-validation-summary="ModelOnly"
+                         class="text-danger">
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label asp-for="FirstName"
+                               class="form-label">
+
+                            Full Name
+
+                        </label>
+
+                        <input asp-for="LastName"
+                               class="form-control"
+                               placeholder="Enter your full name" />
+
+                        <span asp-validation-for="FirstName"
+                              class="text-danger">
+                        </span>
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label asp-for="Skills"
+                               class="form-label">
+
+                            Skills
+
+                        </label>
+
+                        <input asp-for="Skills"
+                               class="form-control"
+                               placeholder="e.g. Teaching, Medical, Logistics" />
+
+                        <span asp-validation-for="Skills"
+                              class="text-danger">
+                        </span>
+
+                    </div>
+
+
+                    <div class="mb-4">
+
+                        <label asp-for="Availability"
+                               class="form-label">
+
+                            Availability
+
+                        </label>
+
+
+                        <select asp-for="Availability"
+                                class="form-select">
+
+                            <option>
+                                Weekends
+                            </option>
+
+                            <option>
+                                Evenings
+                            </option>
+
+                            <option>
+                                Weekdays
+                            </option>
+
+                            <option>
+                                Flexible
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button type="submit"
+                            class="btn btn-success">
+
+                        Submit Interest
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-4">
+
+            <div class="volunteer-art">
+
+                <div>
+                    🙌
+                </div>
+
+                <h3>
+                    Your Hands Can Make a Difference
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+
+}
